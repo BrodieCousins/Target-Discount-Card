@@ -193,8 +193,8 @@ class HomeViewController: UIViewController {
             // Logo
             logoView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             logoView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
-            logoView.widthAnchor.constraint(equalToConstant: 40),
-            logoView.heightAnchor.constraint(equalToConstant: 40),
+            logoView.widthAnchor.constraint(equalToConstant: 64),
+            logoView.heightAnchor.constraint(equalToConstant: 64),
             
             // Title - ensure proper constraints
             titleLabel.leadingAnchor.constraint(equalTo: logoView.trailingAnchor, constant: 16),

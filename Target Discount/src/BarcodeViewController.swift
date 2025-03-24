@@ -150,6 +150,7 @@ class BarcodeViewController: UIViewController {
         setupBrightnessControl()
         updateColorsForCurrentMode()
         setupTraitChangeObserving()
+        let _ = UIScreen.main.brightness
         
         // Update brightness container height - use only ONE constraint
         // Remove any previous constraints to be safe
@@ -170,14 +171,21 @@ class BarcodeViewController: UIViewController {
         brightnessBeforeShow = UIScreen.main.brightness
         
         // Auto-increase brightness for better scanning
-        UIScreen.main.brightness = 0.9
-        brightnessSlider.value = Float(UIScreen.main.brightness)
+        DispatchQueue.main.async { 
+                // Auto-increase brightness for better scanning
+                UIScreen.main.brightness = 0.9
+                self.brightnessSlider.value = Float(UIScreen.main.brightness)
+            }
         
-        // Display barcode
-        displayBarcode()
+        // Then display barcode with small delay
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
+                self?.displayBarcode()
+            }
         
-        // Add subtle animation
-        addPulseAnimation()
+        // Finally add animations with another small delay
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [weak self] in
+                self?.addPulseAnimation()
+            }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -292,8 +300,8 @@ class BarcodeViewController: UIViewController {
             // Logo
             logoView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60),
             logoView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10), // Reduced from 20
-            logoView.widthAnchor.constraint(equalToConstant: 32),
-            logoView.heightAnchor.constraint(equalToConstant: 32),
+            logoView.widthAnchor.constraint(equalToConstant: 40),
+            logoView.heightAnchor.constraint(equalToConstant: 40),
             
             // Title
             titleLabel.leadingAnchor.constraint(equalTo: logoView.trailingAnchor, constant: 16),
