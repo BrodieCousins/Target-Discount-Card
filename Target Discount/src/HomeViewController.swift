@@ -81,6 +81,8 @@ class HomeViewController: UIViewController {
         setupUI()
         updateColorsForCurrentMode()
         setupTraitChangeObserving()
+        edgesForExtendedLayout = .all
+        navigationController?.isNavigationBarHidden = true
         
         // Register for app foreground notifications
         NotificationCenter.default.addObserver(

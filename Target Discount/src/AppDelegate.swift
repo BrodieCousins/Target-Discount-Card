@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  Target Discount
-//
-//  Created by Brodie Cousins on 12/3/2025.
-//
-
 import UIKit
 
 @main
@@ -18,5 +11,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
 }
-
-

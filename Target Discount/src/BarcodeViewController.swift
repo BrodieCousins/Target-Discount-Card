@@ -183,6 +183,21 @@ class BarcodeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        // Add these lines to ensure navigation bar is visible
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+        
+        // Make sure the bar is properly styled but still visible
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        
+        // Ensure tint color is set so the back button is visible
+        if #available(iOS 13.0, *) {
+            let isDarkMode = traitCollection.userInterfaceStyle == .dark
+            navigationController?.navigationBar.tintColor = isDarkMode ? .white : .textPrimary
+        } else {
+            navigationController?.navigationBar.tintColor = .textPrimary
+        }
+        
         // Update colors for current appearance mode
         updateColorsForCurrentMode()
     }
