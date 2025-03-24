@@ -10,22 +10,9 @@
 		3371385F2D90E9310007EB36 /* Target Discount.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Target Discount.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		337138712D90E9320007EB36 /* Exceptions for "Target Discount" folder in "Target Discount" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 3371385E2D90E9310007EB36 /* Target Discount */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		337138612D90E9310007EB36 /* Target Discount */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				337138712D90E9320007EB36 /* Exceptions for "Target Discount" folder in "Target Discount" target */,
-			);
 			path = "Target Discount";
 			sourceTree = "<group>";
 		};
